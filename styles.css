@@ -1,0 +1,65 @@
+body {
+    /* background-color: rgba(1, 24, 24,1); */
+    background-color: white;
+             /* As IE6 ignores !important it will set width as 1000px; */
+             min-width: 795px;
+ 
+}
+
+/* .gameWindow {
+    width: auto;
+    min-width: 795px;
+    height: 90vh;
+    align-self: center;
+    margin: auto;
+    border: 5px solid goldenrod;
+    border-style: groove; 
+    margin:  20vh auto;
+    
+} */
+.gameWindow{
+    display: flex;
+    left: auto ;
+    height: auto;
+    width:100%;
+    margin: 5px 20w;
+}
+#board{
+    /* position: absolute; */
+    height: 70vh;
+    width:auto;
+    box-shadow: #4CAF50;
+    border-radius: 5vh;
+    margin: 20vh auto;
+    align-self: center;
+    /* top:20vh; */
+
+}
+
+button {
+    background-color: #4CAF50;
+    border: 0.1vw solid green;
+    color: white;
+    text-align: center;
+    font-size: auto;
+    cursor: pointer;
+    width: calc(95vw / 4);
+    height: 5vh;
+}
+
+.buttons {      
+    display: flex;
+    left: auto ;
+    height: auto;
+    width:100%;
+    margin: 5px 20px;
+
+}
+
+.buttons button:hover {
+    background-color: #89df8c
+}
+
+#yellowPiece, #redPiece{
+    height: 8vh;
+}
