@@ -2,7 +2,7 @@ body {
     background-color: white;
     /* background-color: white; */
     /* As IE6 ignores !important it will set width as 1000px; */
-    min-width: 590px;
+    /* min-width: 590px; */
 
 }
 
