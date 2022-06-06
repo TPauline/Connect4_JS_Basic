@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     rv = 25
     circles = []
     for (let r = 0; r < 6; r++) {
-        lv = 0
+        lv = 5
         row = []
         for (let c = 0; c < 7; c++) {
             clone = circle.cloneNode("true")
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.appendChild(clone)
             clone.style.left = "calc((100vw + " + lv + "vh - (590px))/2 )"
             clone.style.top = " calc(" + rv + "vh + 10px)"
-            lv += 20
+            lv += 23
             row.push(clone)
         }
         circles.push(row)

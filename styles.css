@@ -1,8 +1,6 @@
 body {
     background-color: white;
-    /* background-color: white; */
-    /* As IE6 ignores !important it will set width as 1000px; */
-    /* min-width: 590px; */
+   
 
 }
 
@@ -18,11 +16,11 @@ body {
 #board {
     position: absolute;
     height: 80vh;
-    width: 93vh;
+    width: auto;
     box-shadow: #4CAF50;
     border-radius: 5vh;
     left: calc((100vw - 795px)/2);
-    top: calc(25vh);
+    top: calc(20vh);
 
 }
 
@@ -69,18 +67,17 @@ button {
     width: 8vh;
     left: calc((100vw - (590px))/2);
     top: calc(25vh + 10px);
-    /* z-index: 2; */
     border-color: green;
     border-width: 1px;
     border-style: groove;
 }
 
 #piecesholder1 {
-    left: calc((100vw - (950px))/2);
+    left: calc(10vw);
 }
 
 #piecesholder2 {
-    left: calc((100vw + (700px))/2);
+    left: calc((90vw));
 }
 
 #piecesholder1,
@@ -90,4 +87,6 @@ button {
     display: flex;
     flex-wrap: wrap;
     width: 6vh;
+        z-index: 1;
+
 }
