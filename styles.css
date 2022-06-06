@@ -15,7 +15,7 @@ body {
 
 #board {
     position: absolute;
-    height: 80vh;
+    height: 85vh;
     width: auto;
     box-shadow: #4CAF50;
     border-radius: 5vh;
@@ -25,7 +25,7 @@ body {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #78b147;
     border: 0.1vw solid green;
     color: white;
     text-align: center;
@@ -66,7 +66,7 @@ button {
     height: 8vh;
     width: 8vh;
     left: calc((100vw - (590px))/2);
-    top: calc(25vh + 10px);
+    top: calc(20vh + 10px);
     border-color: green;
     border-width: 1px;
     border-style: groove;
