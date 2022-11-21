@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
               
     }
 
+    
+
 // circles[6][0].style.background_color = pieces.red
     create_GameBoard()
     setup_board_overlay()
@@ -61,5 +63,29 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
 
+
+
+
+
+    function blah(i,j, c1,c2){
+        if (j%2 == 0){
+            circles[i][j].style.backgroundImage = c1
+        }else{
+            circles[i][j].style.backgroundImage = c2
+        }
+    }
+    function setup_toDelete_later(){
+        for (let i = 0; i <6; i++) {
+
+            for (let j = 0; j <7; j++) {
+                if( i%2 ==0){
+                    blah(i,j,  pieces.red, pieces.yellow)
+                }else{
+                    blah(i,j,   pieces.yellow,pieces.red)
+                }
+            }         
+        }         
+    }
+    // setup_toDelete_later()
     
 })

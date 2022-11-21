@@ -3,7 +3,7 @@
 
 <head>
     <meta lang="en" charset="utf-8">
-    <title>Connect4</title>
+    <title>game play</title>
     
     <link rel="stylesheet" type="text/css" href="styles.css">
    <!-- Add icon library -->
@@ -16,17 +16,24 @@
 <body>
     
     <div class="buttons">
+        <a href="gameMode.html"> <button id="MAIN_MENU">MAIN MENU</i></button> </a>
         <button id="reset"><i class="fa fa-undo"></i></button>
+        
         <button class="btn"><i class="fa fa-music"></i></button>
     </div>
-    <h1 id="logo"> CONNECT 4</h1>
-    <div style="display: flex; flex-wrap: wrap; height: 800px; width: 1000px; margin-left:480px">
-        <div id="fullBoard"></div>
-        <a href="gameMode.html"><button id="play"><i class="fa fa-play"></i></button></a>
-       
-        
-    </div>
-    
+    <div id ="gameArea">
+        <div id = "over_board">
+
+        </div>
+        <div id="board">
+            <div class="circle"></div>
+        </div>
+        <div id="board_overlay">
+            
+        </div>
+    </div>   
+
+    <script src="connect4.js "></script>
 </body>
 
 </html>
