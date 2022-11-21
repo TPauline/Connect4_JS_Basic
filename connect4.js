@@ -1,50 +1,65 @@
 document.addEventListener('DOMContentLoaded', () => {
     board = document.querySelector("#board")
-    console.log(board)
- 
-    circle = document.querySelector(".circle")
+    board_overlay = document.querySelector("#board_overlay")
+    // console.log(board)
     pieces={ red : "url(images/redPiece.png)", yellow : "url(images/yellowPiece.png)" }
     circles = []
+    circle = document.querySelector(".circle")
+    console.log(board.offsetLeft, board.offsetTop)
 
-    for (let r = 0; r < 7; r++) {   
-            row = []
-            for (let c = 0; c <7; c++) {
-                clone = circle.cloneNode("true")
-                clone.classList.add(".circle")
-                board.appendChild(clone)
-                row.push(clone)
-            }
-            circles.push(row)
+    function create_GameBoard(){
+        board.style.top = board.offsetTop + 120+ "px"
+        
+
+        over_board = document.querySelector("#over_board")
+
+        for (let i = 0; i <7; i++) {
+            let c_over = document.createElement("div")
+            c_over.classList.add("circle")
+            c_over.style.borderColor = "transparent"
+            c_over.style.backgroundColor = "transparent"
+            over_board.appendChild(c_over)
+        }
+
+       
+        for (let r = 0; r < 6; r++) {   
+                row = []
+                for (let c = 0; c <7; c++) {
+                    clone = circle.cloneNode("true")
+                    board.appendChild(clone)
+                    row.push(clone)
+                }
+                circles.push(row)
+        }
+
+        board.removeChild(circle)
     }
-    board.removeChild(circle)
+    
+    
 
-    // rv = 25
-    // circles = []
-    // for (let r = 0; r < 6; r++) {
-    //     lv = 5
-    //     row = []
-    //     for (let c = 0; c < 7; c++) {
-    //         clone = circle.cloneNode("true")
-    //         clone.classList.add(".circle")
-    //         document.body.appendChild(clone)
-    //         clone.style.left = "calc((100vw + " + lv + "vh - (590px))/2 )"
-    //         clone.style.top = " calc(" + rv + "vh + 10px)"
-    //         lv += 23
-    //         row.push(clone)
-    //     }
-    //     circles.push(row)
-    //     rv += 10
-    // }
+    function setup_board_overlay(){
+
+
+        for (let c = 0; c <7; c++) {
+            let col_ovly = document.createElement("div")
+            col_ovly.classList.add("column_overlay")
+            board_overlay.appendChild(col_ovly)
+            
+        }
+              
+    }
+
+// circles[6][0].style.background_color = pieces.red
+    create_GameBoard()
+    setup_board_overlay()
+
     console.log(circles)
+    circles[5][0].style.backgroundImage = pieces.red
+    console.log(circles[5][0])
+    circles[5][6].style.backgroundImage = pieces.yellow
+    console.log(circles[5][5])
+  
 
-    // function setPiece(circle, piece) {
-    //     circle.style.backgroundImage = piece
-    //     circle.style.backgroundSize = "11vh"
-    //     circle.style.backgroundRepeat = "no-repeat"
-    //     circle.style.backgroundPosition = "-11px -11px"
-    // }
 
-    // setPiece(circles[0][0], pieces.red)
-    // setPiece(circles[1][5], pieces.yellow)
     
 })
