@@ -103,7 +103,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', end
 
 .circle {
    
-    background-color: white;
+    background-image: none;
     border-radius: 50%;
     height: 92px;
     width: 92px;
@@ -260,8 +260,13 @@ h1::before {
  }
 
 
-button {
+#vs_computer, #vs_user{
+    z-index: 10;
+    margin-top: 400px;
+}
 
+button {
+    
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f0b7a1+0,8c3310+50,752201+51,bf6e4e+100;Brown+Gloss */
     background: rgb(240,183,161); /* Old browsers */
     background: -moz-linear-gradient(top,  rgb(240,183,161) 0%, rgb(140,51,16) 50%, rgb(117,34,1) 51%, rgb(191,110,78) 100%); /* FF3.6-15 */

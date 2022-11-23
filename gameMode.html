@@ -23,10 +23,24 @@
     </div>
     <h1 id="logo2"> Choose Game Mode</h1>
     <div style="display: flex; flex-wrap: wrap; margin-left:25%; text-align: center;">
-        <a href="gamePlay.html"><button id="vs_user" style=" margin-left: 50%; width:400px; height: 300px; font-size: 100px;"> <i class='fa fa-user'></i> VS <i class="fa fa-laptop"></i></button></a>
-        <a href="gamePlay.html"><button id="vs_computer" style="margin-left: 50%;  width:400px;  height: 300px; font-size: 100px;"> <i class='fa fa-user'></i> VS <i class="fa fa-user"></i></button></a>
+        <a href="gamePlay.html"><button id="vs_computer" style=" margin-left: 50%;  width:400px;  height: 300px; font-size: 100px;"> <i class='fa fa-user'></i> VS <i class="fa fa-user"></i></button></a>
+
+        <a href="gamePlay.html"><button id="vs_user" style=" margin-left: 55%; width:400px; height: 300px; font-size: 100px;"> <i class='fa fa-user'></i> VS <i class="fa fa-laptop"></i></button></a>
+        
     </div>
-    
+    <script>
+
+
+document.getElementById("vs_computer").addEventListener("click", () => {
+        localStorage.gameMode = "computer"
+    });
+
+
+    document.getElementById("vs_user").addEventListener("click", () => {
+        localStorage.gameMode = "user"
+    });
+
+    </script>
 </body>
 
 </html> 
