@@ -27,13 +27,24 @@ body {
 #gameArea{
  display: flex;
  flex-wrap: wrap;
- margin-left: 560px;
- margin-right: 560px;
+ /* margin-left:25%;
+ margin-right: 25%; */
  margin-top: 20px;
 
 }
 
-#board,#board_overlay{
+#gameWindow{
+    display: flex;
+    flex-wrap: wrap;
+    /* margin-left:25%;
+    margin-right: 25%;
+    margin-top: 20px; */
+    /* width: 2100px;
+    height: 900px; */
+   
+   }
+
+#board,#board_overlay,#playerInfo1,#playerInfo2{
     position: absolute;  
     width: 800px;
     height: 800px;
@@ -42,8 +53,11 @@ body {
     flex-wrap: wrap;
     padding: 15px;
     border-radius: 20px;
+    margin-left: 640px;
 
 }
+
+
 
 #fullBoard{
     background-image: url(images/fullboard.png);
@@ -66,14 +80,41 @@ body {
     width:830px;
     display:flex;
     padding-left: 10px; 
+    margin-left: 640px;
   
 }
 
 #board{
     height: 700px;
+    margin-left: 640px;
+   
+}
+#playerInfo1,#playerInfo2{
+    width: 400px;
+    height: 600px;
+  
+}
+
+#playerInfo1 button,#playerInfo2 button{
+    width: 500px;
+    height: 200px;
+  
+}
+
+#playerInfo1{
+    width: 400px;
+    height: 600px;
+    margin-left: 200px;
+}
+
+#playerInfo2{
+    width: 400px;
+    height: 600px;
+    margin-left: 1490px;
 }
 
 #board, .column_overlay{
+    
      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f0b7a1+0,8c3310+50,752201+51,bf6e4e+100;Brown+Gloss */
 background: rgb(240,183,161); /* Old browsers */
 background: -moz-linear-gradient(top,  rgb(240,183,161) 0%, rgb(140,51,16) 50%, rgb(117,34,1) 51%, rgb(191,110,78) 100%); /* FF3.6-15 */
@@ -122,6 +163,14 @@ background-size: 100px 100px;
     border-style: groove; 
 }
 
+#playerInfo1 .circle ,#playerInfo2 .circle{
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    margin: 80px;
+}
 
 .column_overlay{
     /* background:rgba(0,0,0,0.1); */
@@ -129,6 +178,7 @@ background-size: 100px 100px;
     height: 830px; 
     width: 114.28px; 
     box-shadow: none;
+    
 }
 
 .column_overlay:hover {
@@ -298,7 +348,14 @@ button:hover {
 }
 
 
+.yellowPiece{
+   background-image: url(images/yellowPiece.png);
+}
 
 
-
+.redPiece{
+    background-image: url(images/redPiece.png);
+ }
+ 
+ 
 

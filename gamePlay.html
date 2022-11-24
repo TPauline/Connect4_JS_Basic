@@ -4,36 +4,42 @@
 <head>
     <meta lang="en" charset="utf-8">
     <title>game play</title>
-    
+
     <link rel="stylesheet" type="text/css" href="styles.css">
-   <!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.cdnfonts.com/css/common-pixel" rel="stylesheet">
 
 
 </head>
 
 <body>
-    
+
     <div class="buttons">
-      
+
         <a href="gameMode.html"> <button id="MAIN_MENU">MAIN MENU</i></button> </a>
         <button id="reset"><i class="fa fa-undo"></i></button>
-        
+
         <button class="btn"><i class="fa fa-music"></i></button>
     </div>
-    <div id ="gameArea">
-        <div id = "over_board">
 
-        </div>
-        <div id="board">
-            <div class="circle"></div>
-        </div>
-        <div id="board_overlay">
-            
-        </div>
-    </div>   
+    <div id="gameWindow">
 
+        <div id="playerInfo1"> </div>
+        <div id="gameArea">
+            <div id="over_board">
+
+            </div>
+            <div id="board">
+                <div class="circle"></div>
+            </div>
+
+            <div id="board_overlay">
+
+            </div>
+        </div>
+        <div id="playerInfo2"> </div>
+    </div>
     <script src="connect4.js "></script>
 </body>
 
