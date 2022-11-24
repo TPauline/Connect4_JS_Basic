@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    gameMode = "computer"
+    gameMode = ""
     if (localStorage.gameMode) {
         gameMode = localStorage.gameMode
     } else {
@@ -164,17 +164,120 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function check_rows(row, player) {
+        console.log("ro")
+        for (let i = 0; i + 4 < 6; i++) {
+            let c1 = circles[row][i]
+            let c2 = circles[row][i + 1]
+            let c3 = circles[row][i + 2]
+            let c4 = circles[row][i + 3]
+
+            if (c1.classList.contains(player.class) && c2.classList.contains(player.class) && c3.classList.contains(player.class) && c4.classList.contains(player.class)) {
+                if (player == player1) {
+                    alert("player1 wins row")
+                } else {
+                    alert("player2 wins row")
+                }
+            }
+
+        }
+    }
+
+
+    function check_cols(col, player) {
+        console.log("cl")
+        for (let i = 0; i + 4 < 7; i++) {
+            let c1 = circles[i][col]
+            let c2 = circles[i + 1][col]
+            let c3 = circles[i + 2][col]
+            let c4 = circles[i + 3][col]
+
+            if (c1.classList.contains(player.class) && c2.classList.contains(player.class) && c3.classList.contains(player.class) && c4.classList.contains(player.class)) {
+                if (player == player1) {
+                    alert("player1 wins col")
+                } else {
+                    alert("player2 wins col")
+                }
+            }
+
+        }
+    }
+
+    function check_rightDiagonal(player) {
+        console.log("rd")
+        for (let row = 0; row + 4 < 6; row++) {
+            for (let col = 0; col + 4 < 7; col++) {
+
+                let c1 = circles[row][col]
+                let c2 = circles[row + 1][col + 1]
+                let c3 = circles[row + 2][col + 2]
+                let c4 = circles[row + 3][col + 3]
+
+                if (c1.classList.contains(player.class) && c2.classList.contains(player.class) && c3.classList.contains(player.class) && c4.classList.contains(player.class)) {
+                    if (player == player1) {
+                        alert("player1 wins right")
+                    } else {
+                        alert("player2 wins right")
+                    }
+                }
+            }
+
+        }
+    }
+
+    function check_leftDiagonal(player) {
+        console.log("ld")
+        for (let row = 5; row - 4 > -1; row--) {
+            for (let col = 0; col + 4 < 7; col++) {
+
+                let c1 = circles[row][col]
+                let c2 = circles[row - 1][col + 1]
+                let c3 = circles[row - 2][col + 2]
+                let c4 = circles[row - 3][col + 3]
+
+                if (c1.classList.contains(player.class) && c2.classList.contains(player.class) && c3.classList.contains(player.class) && c4.classList.contains(player.class)) {
+                    if (player == player1) {
+                        alert("player1 wins left")
+                    } else {
+                        alert("player2 wins left")
+                    }
+                }
+            }
+
+        }
+    }
+
+
+
     create_GameBoard()
     setup_board_overlay()
     playerInfo_setup(playerInfo1, player1, 1)
     playerInfo_setup(playerInfo2, player2, 2)
+    colClicks()
+
 
 
 
     setInterval(() => {
-
         playerInfo_update(playerInfo1, player1, 1)
         playerInfo_update(playerInfo2, player2, 2)
+
+        check_leftDiagonal(player1)
+        check_leftDiagonal(player2)
+        
+        check_rightDiagonal(player1)
+        check_rightDiagonal(player2)
+
+        
+        for (let j = 0; j < 7; j++) {
+            check_cols(j, player1)
+            check_cols(j, player2)
+
+            if (j < 6) {
+                check_rows(j, player1)
+                check_rows(j, player2)
+            }
+        }
 
 
     }, 100)
@@ -183,37 +286,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (gameMode == "computer" && player2.turn) {
 
-            alert("****Computer's  Turn******")
-
-            if( player2.turn){
-
-                let pos = Math.floor(Math.random() * 7)
+            // alert("****Computer's  Turn******")
+            if (player2.turn) {
+                pos = Math.floor(Math.random() * 7)
                 console.log(pos)
                 const colobj = overlay_cols[pos];
-                console.log(colobj,player2.class)
-                if (colobj.shouldColor >= 0 && !colobj.columnList[colobj.pos].classList.contains(player2.class)
-                && !colobj.columnList[colobj.shouldColor].classList.contains(player1.class)) {
-                    colobj.columnList[colobj.shouldColor].classList.add(player2.class)
-                    player1.turn = !player1.turn
-                    player2.turn = !player2.turn
-                }else{
+                console.log("pos >>.: ", colobj, player2.class)
+                colobj.shouldColor--;
+                if (colobj.shouldColor >= 0 && !colobj.columnList[colobj.shouldColor].classList.contains(player2.class)) {
+                    setTimeout(() => {
+                        colobj.columnList[colobj.shouldColor].classList.add(player2.class)
+                        player1.turn = !player1.turn
+                        player2.turn = !player2.turn
+                    }, 500)
+                } else {
                     console.log("computer is trying again")
                 }
                 player2.numPieces--
             }
-
-
-            
-          
         }
 
-    }, 1000)
+    }, 1500)
 
 
+})
 
-    colClicks()
 
-    // function blah(i, j, c1, c2) {
+// function blah(i, j, c1, c2) {
     //     if (j % 2 == 0) {
     //         circles[i][j].style.backgroundImage = c1
     //     } else {
@@ -233,4 +332,3 @@ document.addEventListener('DOMContentLoaded', () => {
     //         }
     //     }
     // }
-})
