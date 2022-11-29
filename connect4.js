@@ -9,12 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     pieces = { redUrl: "url(images/redPiece.png)", yellowUrl: "url(images/yellowPiece.png)" }
     board = document.querySelector("#board")
+    body = document.querySelector("body");
+   
+
     board_overlay = document.querySelector("#board_overlay")
     playerInfo1 = document.querySelector("#playerInfo1")
     playerInfo2 = document.querySelector("#playerInfo2")
     circles = []
     circle = document.querySelector(".circle")
     const overhead_cicles = document.getElementById('over_board').children;
+    "***resize canvas***"
+        gameWindow.style.width = window.innerWidth + "px";
+        gameWindow.style.height =  window.innerHeight+ "px";
+        console.log(gameWindow.style.width, window.innerWidth);
+        console.log(gameWindow.style.height, window.innerHeight);
 
     function shuffle(arr) {
         arr.sort(() => Math.random() - 0.5);
@@ -24,6 +32,19 @@ document.addEventListener('DOMContentLoaded', () => {
     player1 = { numPieces: 24, url: temp[0].url, class: temp[0].class, turn: true }
     player2 = { numPieces: 24, url: temp[1].url, class: temp[1].class, turn: false }
     const overlay_cols = []
+
+    function resize() {
+        "***resize canvas***"
+        gameWindow.style.width = window.innerWidth + "px";
+        gameWindow.style.height =  window.innerHeight+ "px";
+        console.log(gameWindow.style.width, window.innerWidth);
+        console.log(gameWindow.style.height, window.innerHeight);
+    }
+
+    window.addEventListener('resize', () => {
+        resize()
+        
+    })
 
     function playerInfo_setup(playerInfo, player, n) {
         let c_over = document.createElement("div")
@@ -205,8 +226,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function check_rightDiagonal(player) {
         console.log("rd")
-        for (let row = 0; row + 4 < 6; row++) {
-            for (let col = 0; col + 4 < 7; col++) {
+        for (let row = 0; row + 3 < 6; row++) {
+            for (let col = 0; col + 3 < 7; col++) {
 
                 let c1 = circles[row][col]
                 let c2 = circles[row + 1][col + 1]
@@ -261,24 +282,21 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(() => {
         playerInfo_update(playerInfo1, player1, 1)
         playerInfo_update(playerInfo2, player2, 2)
-
-        check_leftDiagonal(player1)
-        check_leftDiagonal(player2)
-        
         check_rightDiagonal(player1)
         check_rightDiagonal(player2)
+        check_leftDiagonal(player1)
+        check_leftDiagonal(player2)
 
         
         for (let j = 0; j < 7; j++) {
             check_cols(j, player1)
             check_cols(j, player2)
-
-            if (j < 6) {
-                check_rows(j, player1)
-                check_rows(j, player2)
-            }
         }
 
+        for (let j = 0; j <6; j++) {
+                check_rows(j, player1)
+                check_rows(j, player2)
+        }
 
     }, 100)
 

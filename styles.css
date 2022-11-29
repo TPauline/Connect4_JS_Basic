@@ -1,27 +1,64 @@
 
 /* cool colors from: https://www.colorzilla.com/gradient-editor/ */
 /* https://semantic-ui.com/elements/icon.html#audio--video */
-body {
+
+/* body {
     background-color: white;
     margin: 0;
     width: 100vw;
     height: 100vh; 
     min-width: 1920px;
     min-height: 1080px;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,141682+13,141682+13,141682+27,141682+39,141682+82,2725c4+97,7db9e8+100 */
-    background: rgb(30,87,153); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgb(30,87,153) 0%, rgb(20,22,130) 13%, rgb(20,22,130) 13%, rgb(20,22,130) 27%, rgb(20,22,130) 39%, rgb(20,22,130) 82%, rgb(39,37,196) 97%, rgb(125,185,232) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  rgb(30,87,153) 0%,rgb(20,22,130) 13%,rgb(20,22,130) 13%,rgb(20,22,130) 27%,rgb(20,22,130) 39%,rgb(20,22,130) 82%,rgb(39,37,196) 97%,rgb(125,185,232) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  rgb(30,87,153) 0%,rgb(20,22,130) 13%,rgb(20,22,130) 13%,rgb(20,22,130) 27%,rgb(20,22,130) 39%,rgb(20,22,130) 82%,rgb(39,37,196) 97%,rgb(125,185,232) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
 
-    /* From https://css.glass */
+    background: rgb(30,87,153); 
+    
+    background: -moz-linear-gradient(top,  rgb(30,87,153) 0%, rgb(20,22,130) 13%, rgb(20,22,130) 13%, rgb(20,22,130) 27%, rgb(20,22,130) 39%, rgb(20,22,130) 82%, rgb(39,37,196) 97%, rgb(125,185,232) 100%); 
+    background: -webkit-linear-gradient(top,  rgb(30,87,153) 0%,rgb(20,22,130) 13%,rgb(20,22,130) 13%,rgb(20,22,130) 27%,rgb(20,22,130) 39%,rgb(20,22,130) 82%,rgb(39,37,196) 97%,rgb(125,185,232) 100%); 
+    background: linear-gradient(to bottom,  rgb(30,87,153) 0%,rgb(20,22,130) 13%,rgb(20,22,130) 13%,rgb(20,22,130) 27%,rgb(20,22,130) 39%,rgb(20,22,130) 82%,rgb(39,37,196) 97%,rgb(125,185,232) 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); 
+
+
     background: rgba(93, 38, 5, 0.8);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(93, 38, 5, 0.3);
+
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: rgba(206,188,155,1);
+    background: -moz-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(206,188,155,1)), color-stop(51%, rgba(85,63,50,1)), color-stop(100%, rgba(42,31,25,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+    background: linear-gradient(135deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cebc9b', endColorstr='#2a1f19', GradientType=1 );
+  
+} */
+
+body{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;    
+    display: inline-block;
+    /* min-width: 1920px;
+    min-height: 1080px;
+    background: rgba(206,188,155,1);
+    background: -moz-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(206,188,155,1)), color-stop(51%, rgba(85,63,50,1)), color-stop(100%, rgba(42,31,25,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+    background: linear-gradient(135deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cebc9b', endColorstr='#2a1f19', GradientType=1 );
+   */
+    background-image: url(images/wp2694479.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-self: center;
 }
 
 #gameArea{
@@ -30,6 +67,7 @@ body {
  /* margin-left:25%;
  margin-right: 25%; */
  margin-top: 20px;
+ top: 52%;
 
 }
 
@@ -48,7 +86,7 @@ body {
     position: absolute;  
     width: 800px;
     height: 800px;
-    background-color: rgb(92, 24, 24);
+    background-color: rgba(92, 24, 24,0.7);
     display: flex;
     flex-wrap: wrap;
     padding: 15px;
@@ -92,12 +130,15 @@ body {
 #playerInfo1,#playerInfo2{
     width: 400px;
     height: 600px;
-  
+    background: rgba(19, 0, 0, 0.9);
 }
 
 #playerInfo1 button,#playerInfo2 button{
     width: 500px;
     height: 200px;
+     -webkit-text-fill-color: rgb(253, 55, 0);
+     -webkit-text-stroke:  rgba(221, 236, 12, 0.741);
+    -webkit-text-stroke-width: 0.5px;
   
 }
 
@@ -128,6 +169,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', end
         text-shadow:
             1px 1px 2px rgba(000,000,000,0.7),
             0px 1px 0px rgba(255,255,255,0.4); 
+           
+        background: rgba(19, 0, 0, 0.9);
+       
        
 }
 
@@ -154,7 +198,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', end
     margin: 7px 7px 7px 7px;
 
     
-background-color: rgb(80, 24, 24);
+/* background-color: rgba(102, 34, 10, 0.5); */
+background:rgba(255, 55, 0, 0.3);
 /* background-size: contain; */
 background-size: cover;
 background-repeat: no-repeat;
@@ -183,7 +228,7 @@ background-size: 100px 100px;
 
 .column_overlay:hover {
     opacity: 1;
-    background: rgb(240,183,161);
+    background: rgba(96, 41, 1, 0.882);
 }
 
 .buttons{
@@ -195,8 +240,8 @@ background-size: 100px 100px;
         color: rgb(80, 24, 24); 
         text-align: center;
         -webkit-text-stroke:  gold;
-        -webkit-text-fill-color: rgb(80, 24, 24);
-        -webkit-text-stroke-width: 0.1px;
+        -webkit-text-fill-color: rgba(80, 24, 24,0.9);
+        -webkit-text-stroke-width: 0.2px;
         font-size: 50px;
         cursor: pointer;
         width: 70px;
@@ -222,23 +267,11 @@ background-size: 100px 100px;
     text-align: center;
     text-transform: uppercase;
     text-rendering: optimizeLegibility;
+    
 }
 
 #logo2{
     font-size: 100px;
-}
-body {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  background: rgba(206,188,155,1);
-  background: -moz-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(206,188,155,1)), color-stop(51%, rgba(85,63,50,1)), color-stop(100%, rgba(42,31,25,1)));
-  background: -webkit-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
-  background: linear-gradient(135deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cebc9b', endColorstr='#2a1f19', GradientType=1 );
 }
 
 h1 {
@@ -312,7 +345,7 @@ h1::before {
 
 #vs_computer, #vs_user{
     z-index: 10;
-    margin-top: 400px;
+    margin-top: 200px;
 }
 
 button {
